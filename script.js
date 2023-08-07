@@ -23,11 +23,11 @@ btnCheck.addEventListener("click", () => {
 
   if (!guess) {
     //TODO: If guess is not a number
-    displayMessage("⛔ Invalid Number ! ⛔");
+    displayMessage("⛔ Invalid Number! ⛔");
 
   } else if (guess <= 0) {
     //TODO: If guess is less than or equal to 0
-    displayMessage("⛔ Invalid Number ! ⛔");
+    displayMessage("⛔ Invalid Number! ⛔");
 
   } else if (score === 0) {
     // TODO: If score equals 0
