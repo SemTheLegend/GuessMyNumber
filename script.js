@@ -10,7 +10,7 @@ const gameScore = document.querySelector(".score");
 const gameHighScore = document.querySelector(".highscore");
 const number = document.querySelector(".number");
 const btnAgain = document.querySelector(".again");
-const Guess = document.querySelector(".guess");
+const inputNum = document.querySelector(".guess");
 
 // Function that parses the message
 const displayMessage = (str) => {
@@ -19,7 +19,7 @@ const displayMessage = (str) => {
 }
 
 btnCheck.addEventListener("click", () => {
-  const guess = Number(Guess.value);
+  const guess = Number(inputNum.value);
 
   if (!guess) {
     //TODO: If guess is not a number
@@ -61,7 +61,7 @@ btnAgain.addEventListener("click", () => {
   score = 20;
   displayMessage("Start guessing...");
   gameScore.textContent = score;
-  Guess.value = "";
+  inputNum.value = "";
   number.textContent = "?";
   secretNum = Math.trunc(Math.random() * 20) + 1;
 });
