@@ -1,6 +1,7 @@
 # Guess My Number
 
-Guess My Number is a simple FrontEnd JavaScript game. It is made up of simple Vanilla JavaScript, and HTML and CSS. It is meant to highlight the basics of DOM manipulation.
+Guess My Number is a simple FrontEnd JavaScript game. It is made up of simple Vanilla JavaScript, and HTML and CSS. It is meant to highlight the basics of DOM manipulation. All you have to do is guess a number from 1 to 20. Then check if you have guessed correctly. You will get hints if you guessed above or below the number.
+Have fun !!!
 
 ## How to Play
 
