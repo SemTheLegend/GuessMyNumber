@@ -4,7 +4,7 @@ let secretNum = Math.trunc(Math.random() * 20) + 1;
 let highscore = 0;
 let score = 20;
 
-const text = document.querySelector(".message");
+const message = document.querySelector(".message");
 const btnCheck = document.querySelector(".check");
 const gameScore = document.querySelector(".score");
 const gameHighScore = document.querySelector(".highscore");
@@ -13,29 +13,33 @@ const btnAgain = document.querySelector(".again");
 const Guess = document.querySelector(".guess");
 
 // Function that parses the message
-const message = (message) => {
-  text.textContent = message;
-  return text.textContent;
+const displayMessage = (str) => {
+  message.textContent = str;
+  return message.textContent;
 }
 
 btnCheck.addEventListener("click", () => {
   const guess = Number(Guess.value);
 
   if (!guess) {
-    message("⛔ Invalid Number ! ⛔");
+    //TODO: If guess is not a number
+    displayMessage("⛔ Invalid Number ! ⛔");
 
   } else if (guess <= 0) {
-    message("⛔ Invalid Number ! ⛔");
+    //TODO: If guess is less than or equal to 0
+    displayMessage("⛔ Invalid Number ! ⛔");
 
   } else if (score === 0) {
-    message("💥 GAME OVER 💥");
+    // TODO: If score equals 0
+    displayMessage("💥 GAME OVER 💥");
     score = 0;
     gameScore.textContent = 0;
 
   } else if (guess === secretNum) {
-    message("✅ Correct Number ✅");
+    // TODO: If guess equals secret number
+    displayMessage("✅ Correct Number ✅");
     number.textContent = secretNum;
-    document.body.style.backgroundColor = "#22ff52";
+    document.body.style.backgroundColor = "#60b347";
     number.style.width = "30rem";
 
     if (score > highscore) {
@@ -44,11 +48,10 @@ btnCheck.addEventListener("click", () => {
     gameHighScore.textContent = highscore;
 
   } else {
-
-    message(guess > secretNum ? "📈 Too high 📈" : "📉 Too Low 📉");
+    // TODO: If the guess is higher or lower than secret number
+    displayMessage(guess > secretNum ? "📈 Too high 📈" : "📉 Too Low 📉");
     score--;
     gameScore.textContent = score;
-
   }
 });
 
@@ -56,7 +59,7 @@ btnAgain.addEventListener("click", () => {
   document.body.style.backgroundColor = "#222";
   number.style.width = "15rem";
   score = 20;
-  message("Start guessing...");
+  displayMessage("Start guessing...");
   gameScore.textContent = score;
   Guess.value = "";
   number.textContent = "?";
