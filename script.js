@@ -31,34 +31,32 @@ btnCheck.addEventListener("click", () => {
     if (score > 1) {
       //TODO: If the score is greater than 1
 
-      if (guess <= 0) {
+      if (guess <= 0 || guess > 20) {
         //TODO: If guess is less than or equal to 0 or not a valid number
 
         displayMessage("⛔ Invalid Number! ⛔");
 
-      } else {
+      } else if (guess === secretNum) {
+        // TODO: If guess equals secret number
 
-        if (guess === secretNum) {
-          // TODO: If guess equals secret number
+        displayMessage("✅ Correct Number ✅");
+        number.textContent = secretNum;
+        document.body.style.backgroundColor = "#60b347";
+        number.style.width = "30rem";
 
-          displayMessage("✅ Correct Number ✅");
-          number.textContent = secretNum;
-          document.body.style.backgroundColor = "#60b347";
-          number.style.width = "30rem";
-
-          if (score > highscore) {
-            highscore = score;
-          }
-          gameHighScore.textContent = highscore;
-
-        } else {
-          // TODO: If the guess is higher or lower than secret number
-
-          displayMessage(guess > secretNum ? "📈 Too high 📈" : "📉 Too Low 📉");
-          score--;
-          gameScore.textContent = score;
+        if (score > highscore) {
+          highscore = score;
         }
+        gameHighScore.textContent = highscore;
+
+      } else {
+        // TODO: If the guess is higher or lower than secret number
+
+        displayMessage(guess > secretNum ? "📈 Too high 📈" : "📉 Too Low 📉");
+        score--;
+        gameScore.textContent = score;
       }
+
     } else {
       // TODO: If score now less than 1 
 
